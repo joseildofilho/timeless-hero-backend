@@ -19,4 +19,12 @@ func TestBoard(t *testing.T) {
 		assert.Equal(t, len(board.Grid), int(height), "Grid height should be equals to height")
 		assert.Equal(t, len(board.Grid[0]), int(width), "Grid width should be equals to width")
 	})
+
+	t.Run("should add a thing to a place", func(t *testing.T) {
+		board := turnbased.NewBoard2D(5, 5)
+
+		board.AddToPosition("Player", 1, 2)
+
+		board.GetPlace(1, 1)
+	})
 }
